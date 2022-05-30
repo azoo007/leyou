@@ -1,0 +1,40 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///leyou?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=true
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /leyou148
+    username: leyou148
+    password: leyou
+  main:
+    allow-bean-definition-overriding: true
+mybatis-plus:
+  type-aliases-package: com.leyou.item.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*.xml # 指定Mapper文件的扫描路径
+
+logging:
+  level:
+    com.leyou: debug
+
+ly:
+  jwt:
+    pubKeyPath: D:\leyou_projects\javaee148\software\rsa-key\rsa-key.pub # 公钥地址
+    cookie:
+      cookieName: LY_TOKEN # cookie名称
+    app:
+      serviceName: item-service
+      secret: item-service

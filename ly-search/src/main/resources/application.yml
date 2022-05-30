@@ -1,0 +1,28 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /leyou148
+    username: leyou148
+    password: leyou
+
+ly:
+  jwt:
+    pubKeyPath: D:\leyou_projects\javaee148\software\rsa-key\rsa-key.pub # 公钥地址
+    cookie:
+      cookieName: LY_TOKEN # cookie名称
+    app:
+      serviceName: search-service
+      secret: search-service

@@ -1,0 +1,41 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///leyou?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=true
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+mybatis-plus:
+  type-aliases-package: com.leyou.auth.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+  # 修改映射文件的路径
+  mapper-locations: classpath:mappers/*.xml
+
+  #开启日志显示，用于显示mybatis的sql语句
+logging:
+  level:
+    com.leyou: debug
+
+ly:
+  jwt:
+    pubKeyPath: D:\leyou_projects\javaee148\software\rsa-key\rsa-key.pub # 公钥地址
+    priKeyPath: D:\leyou_projects\javaee148\software\rsa-key\rsa-key # 私钥地址
+    cookie:
+      expire: 30 #过期时间设置 单位分钟
+      refreshTime: 15 # token刷新时间间隔
+      cookieName: LY_TOKEN # cookie名称
+      cookieDomain: leyou.com # cookie的域
+    app:
+      expire: 1440 #过期时间设置 单位分钟
