@@ -1,0 +1,23 @@
+# Project exclude paths
+/ly-auth/target/
+/ly-cart/target/
+/ly-client/ly-client-auth/target/
+/ly-client/ly-client-item/target/
+/ly-client/ly-client-user/target/
+/ly-common/target/
+/ly-gateway/target/
+/ly-item/target/
+/ly-order/target/
+/ly-page/target/
+/ly-pojo/ly-pojo-auth/target/
+/ly-pojo/ly-pojo-cart/target/
+/ly-pojo/ly-pojo-item/target/
+/ly-pojo/ly-pojo-order/target/
+/ly-pojo/ly-pojo-search/target/
+/ly-pojo/ly-pojo-user/target/
+/ly-redis-lock/target/
+/ly-search/target/
+/ly-sharding-sphere/target/
+/ly-sms/target/
+/ly-upload/target/
+/ly-user/target/
